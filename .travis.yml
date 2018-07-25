@@ -9,6 +9,9 @@ matrix:
 #  except:
 #  - /[0-9]{8}-[0-9a-f]{7}/
 
+install:
+  - true
+
 script:
   - echo 'hello' > world.txt
 
