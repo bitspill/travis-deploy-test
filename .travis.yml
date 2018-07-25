@@ -1,0 +1,18 @@
+language: go
+matrix:
+  include:
+    - go: 1.x
+      env: LATEST=true
+    - go: 1.10.x
+
+#branches:
+#  except:
+#  - /[0-9]{8}-[0-9a-f]{7}/
+
+script:
+  - echo 'hello' > world.txt
+
+before_deploy:
+  - git config --local user.name "Jenny Ruok"
+  - git config --local user.email "41490681+jennyruok@users.noreply.github.com"
+  - git tag "$(date +'%Y%m%d')-$(git rev-parse --short HEAD)"
