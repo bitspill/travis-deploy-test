@@ -18,10 +18,11 @@ script:
 before_deploy:
   - git config --local user.name "Jenny Ruok"
   - git config --local user.email "41490681+jennyruok@users.noreply.github.com"
-  - git tag "$(date +'%Y%m%d')-$(git rev-parse --short HEAD)" "$(git rev-parse HEAD)"
+  - git tag "$(date +'%Y%m%d')-$(git rev-parse --short HEAD)"
 
 deploy:
   provider: releases
+  target_commitish: $TRAVIS_COMMIT
   api_key:
     secure: Hw4e9ZmR6XqUQHoN0m7QyswRVeGDobLbntYFdU4FHNgPBmBBYZI+jLDNlg1rYDDsia/vyimFcHfyuJJu9nozjGq58xpGBWj9Am+1KPIv8LxqkOrbj0SrszUXPkFXDvqAl4A7GYXcGVR0lAiSJGC+7nOZlaz1bMfncIDW6T/SxArlmFtwGJnjYW2fQPat3REgULrFJ1NFB6awG1kPt08C5mqCxMslFQsdMaedzxycrMPOxL7yvb9X3SqCqqPrIDjkwtFUMImGNQBc6sZIw9r+SWXiWHXVXvpBi47G3+L/GFRXIxx6v8Y3Msl/7FUMNlK7VoWnTIYmbLR3gbmvix0/uVzbVNlpnmxHjPHjSwtw+gPmq+QIcAbJBe9pqghOrzrb4F+RDp/W3oUEweU9J/47Fubq5AsKAUtW/wgAy4DkSATNBDrtZ5EyF0cjPiCCM8wELxefWGN5xQ1smj7ECjRw3sKeMFK/eOSkewVT4UKIW7QaeRwV1Dgi8AoxSiSfYWsqoFyDjXEFps5/+YoSs6Zr1r99QxwwiOxt/OOYEak06cmY4tPG3d6ldCkfN6yg2ffuZ9nhSLZIDbVpkIZ6Hi/aqA4yj75w3ekrrJ9ARnY4tE1a8IjDX3pAFtKoeLcq0YI5y6AF4d9lKGkDPVyAhhjpZAEvZz1g2TE2TzFOWeSIUeE=
   skip_cleanup: true
