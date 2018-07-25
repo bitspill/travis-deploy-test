@@ -18,8 +18,7 @@ script:
 before_deploy:
   - git config --local user.name "Jenny Ruok"
   - git config --local user.email "41490681+jennyruok@users.noreply.github.com"
-  - git tag "$(date +'%Y%m%d')-$(git rev-parse --short HEAD)"
-  - git push "$(date +'%Y%m%d')-$(git rev-parse --short HEAD)"
+  - git tag "$(date +'%Y%m%d')-$(git rev-parse --short HEAD)" "$(git rev-parse HEAD)"
 
 deploy:
   provider: releases
