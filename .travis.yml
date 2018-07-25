@@ -5,9 +5,9 @@ matrix:
       env: LATEST=true
     - go: 1.10.x
 
-#branches:
-#  except:
-#  - /[0-9]{8}-[0-9a-f]{7}/
+branches:
+  except:
+  - /[0-9]{8}-[0-9a-f]{7}/
 
 install:
   - true
